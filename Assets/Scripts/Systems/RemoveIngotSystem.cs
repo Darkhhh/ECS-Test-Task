@@ -29,7 +29,6 @@ public class RemoveIngotSystem : ReactiveSystem<GameEntity>
         var tiles = _gameContext.GetGroup(GameMatcher.Tile).GetEntities();
         foreach (var ingot in entities)
         {
-            ingot.view.gameObject.SetActive(false);
             var collectedIngots = modelEntity.collectedIngots.value + 1;
             modelEntity.ReplaceCollectedIngots(collectedIngots);
             foreach (var tile in tiles)
